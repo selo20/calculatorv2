@@ -13,7 +13,7 @@ int main(){
         if(answer == 'x')
             break;
         else if(answer=='1'){
-            printf("\n\nPlease enter the numbers that you wanna add up.\n► ");
+            printf("\nPlease enter the numbers that you wanna add up.\n► ");
             scanf("%d %d",&number_one,&number_two);
             result = number_one+number_two;        
         }
