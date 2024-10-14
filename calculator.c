@@ -10,7 +10,9 @@ int main(){
     while(1){
         printf("\nEnter 1 for addition\nEnter 2 for subtraction\nEnter 3 for multiplication\nEnter 4 for division\nEnter x for closing the program\n----------------------------------------\n► ");
         scanf("%c",&answer);
-        if(answer=='1'){
+        if(answer == 'x')
+            break;
+        else if(answer=='1'){
             printf("\n\nPlease enter the numbers that you wanna add up.\n► ");
             scanf("%d %d",&number_one,&number_two);
             result = number_one+number_two;        
@@ -34,10 +36,8 @@ int main(){
         else{
             printf("Please enter a valid operation.\n");
         }
-        if(answer!='x' && answer!='1'&& answer != '2' && answer != '3' && answer != '4')
+        if(answer!='x' | answer=='1'| answer == '2' | answer == '3' | answer == '4')
             printf("The result is: %d\n",result);
-        else
-        break;
     }
     return 0;
 }
