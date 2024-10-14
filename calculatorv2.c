@@ -1,45 +1,49 @@
 #include <stdio.h> 
 
 int main(){
-    int number_one, number_two, result;
-    char answer = '0';
+    
+    char buffer[64];
+    float result;
+    int number_one, number_two;
+    char answer = '0',approval;
 
-    printf("Welcome to my calculator.\nPress enter to continue...");
+    printf("Welcome to my calculator\nPress enter to continue...");
     getchar();
-calc_loop:
 
-        printf("\nEnter 1 for addition\nEnter 2 for subtraction\nEnter 3 for multiplication\nEnter 4 for division\nEnter x for closing the program\n----------------------------------------\n► ");
-        scanf("%c",&answer);
+    while(1){
 
-        switch (answer)
+        printf("\n\n┌───────────────────────────────────────┐\n│Enter 1 for addition\t\t\t│\n├───────────────────────────────────────┤\n│Enter 2 for subtraction\t\t│\n├───────────────────────────────────────┤\n│Enter 3 for multiplication\t\t│\n├───────────────────────────────────────┤\n│Enter 4 for division\t\t\t│\n├───────────────────────────────────────┤\n│Enter x for closing the program\t│\n└───────────────────────────────────────┘\n► ");
+        scanf(" %s", buffer);
+
+        switch (buffer[0])
         {
 
         case '1':
-            printf("\n\nPlease enter the numbers that you wanna add up.\n► ");
+            printf("\nPlease enter the numbers that you wanna add up.\n► ");
             scanf("%d %d",&number_one,&number_two);
             result = number_one+number_two;
-            printf("The result is: %d\n",result);
             break;
         
         case '2':
-            printf("\n\nPlease enter the number you wanna substract from and then enter the second number.\n► ");
+            printf("\nPlease enter the number you wanna substract from and then enter the second number.\n► ");
             scanf("%d %d",&number_one,&number_two);
             result = number_one-number_two;
-            printf("The result is: %d\n",result);
             break;
 
         case '3':
             printf("\nPlease enter the number you wanna multiply.\n► ");
             scanf("%d %d",&number_one,&number_two);
             result = number_one*number_two;
-            printf("The result is: %d\n",result);
             break;
 
         case '4':
-            printf("\n\nPlease enter the number you wanna divide then enter the diviser.\n► ");
+            printf("\nPlease enter the number you wanna divide then enter the diviser.\n► ");
             scanf("%d %d",&number_one,&number_two);
-            result = number_one/number_two;
-            printf("The result is: %d\n",result);
+            if(number_two==0){
+                printf("You cant divide any number with zero!\n");
+                continue;
+            }
+            result = (float) number_one/number_two;
             break;
 
         case 'x':
@@ -47,8 +51,16 @@ calc_loop:
 
         default:
             printf("Please enter a valid operation.\n");
-            goto calc_loop;
+            continue;
         }
-        printf("The result is: %d\n",result);
-        goto calc_loop;
+        if(answer=='4'){
+            printf("The result is: %.2f\n",result);
+            printf("\nPress enter to continue...");
+            getchar();
+        }
+        else{
+            printf("The result is: %.0f\n",result);
+            printf("\nPress enter to continue...");
+    }
+    }
 }
