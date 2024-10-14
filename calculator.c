@@ -21,7 +21,7 @@ int main(){
             result = number_one-number_two;
         }
         else if (answer == '3'){
-            printf("\n\nPlease enter the number you wanna multiply.\n► ");
+            printf("\nPlease enter the number you wanna multiply.\n► ");
             scanf("%d %d",&number_one,&number_two);
             result = number_one*number_two;
         }
@@ -31,7 +31,10 @@ int main(){
             scanf("%d %d",&number_one,&number_two);
             result = number_one/number_two;
         }
-        if(answer!='x')
+        else{
+            printf("Please enter a valid operation.\n");
+        }
+        if(answer!='x' && answer!='1'&& answer != '2' && answer != '3' && answer != '4')
             printf("The result is: %d\n",result);
         else
         break;
