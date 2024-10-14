@@ -5,7 +5,6 @@ int main(){
     char buffer[64];
     float result;
     int number_one, number_two;
-    char answer = '0',approval;
 
     printf("Welcome to my calculator\nPress enter to continue...");
     getchar();
@@ -15,8 +14,7 @@ int main(){
         printf("\n\n┌───────────────────────────────────────┐\n│Enter 1 for addition\t\t\t│\n├───────────────────────────────────────┤\n│Enter 2 for subtraction\t\t│\n├───────────────────────────────────────┤\n│Enter 3 for multiplication\t\t│\n├───────────────────────────────────────┤\n│Enter 4 for division\t\t\t│\n├───────────────────────────────────────┤\n│Enter x for closing the program\t│\n└───────────────────────────────────────┘\n► ");
         scanf(" %s", buffer);
 
-        switch (buffer[0])
-        {
+        switch (buffer[0]){
 
         case '1':
             printf("\nPlease enter the numbers that you wanna add up.\n► ");
@@ -52,15 +50,17 @@ int main(){
         default:
             printf("Please enter a valid operation.\n");
             continue;
+
         }
-        if(answer=='4'){
+        while ((getchar()) != '\n');
+        
+        if(buffer[0]=='4')
             printf("The result is: %.2f\n",result);
-            printf("\nPress enter to continue...");
-            getchar();
-        }
-        else{
+        
+        else
             printf("The result is: %.0f\n",result);
-            printf("\nPress enter to continue...");
-    }
+        
+        printf("\nPress enter to continue...");
+        getchar();
     }
 }
