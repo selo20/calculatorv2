@@ -19,31 +19,35 @@ int main(){
             printf("\n\nPlease enter the numbers that you wanna add up.\n► ");
             scanf("%d %d",&number_one,&number_two);
             result = number_one+number_two;
+            printf("The result is: %d\n",result);
+            break;
         
         case '2':
             printf("\n\nPlease enter the number you wanna substract from and then enter the second number.\n► ");
             scanf("%d %d",&number_one,&number_two);
             result = number_one-number_two;
+            printf("The result is: %d\n",result);
+            break;
 
         case '3':
             printf("\nPlease enter the number you wanna multiply.\n► ");
             scanf("%d %d",&number_one,&number_two);
             result = number_one*number_two;
+            printf("The result is: %d\n",result);
+            break;
 
         case '4':
             printf("\n\nPlease enter the number you wanna divide then enter the diviser.\n► ");
             scanf("%d %d",&number_one,&number_two);
             result = number_one/number_two;
+            printf("The result is: %d\n",result);
+            break;
 
         case 'x':
-            break;
+            return 0;
 
         default:
             printf("Please enter a valid operation.\n");
         }
-
-        if 
-        printf("The result is: %d\n",result);
-
     }
 }
