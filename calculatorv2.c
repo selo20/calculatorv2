@@ -52,8 +52,9 @@ int main(){
             continue;
 
         }
-        while ((getchar()) != '\n');
         
+        while ((getchar()) != '\n');
+
         if(buffer[0]=='4')
             printf("The result is: %.2f\n",result);
         
