@@ -1,3 +1,3 @@
 # minesweeper
 
-Minesweeper for linux n windows
+MineSweeper game for Linux and Windows
