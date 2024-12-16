@@ -1,0 +1,23 @@
+#ifndef SHADERS_H
+#define SHADERS_H
+
+#include <glad/glad.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+
+typedef struct
+{
+    unsigned int ID;
+} Shader;
+
+
+Shader Shader_create(const char* vertexPath, const char* fragmentPath);
+void Shader_use(const Shader* shader);
+void Shader_setBool(const Shader* shader, const char* name, bool value);
+void Shader_setInt(const Shader* shader, const char* name, int value);
+void Shader_setFloat(const Shader* shader, const char* name, float value);
+void checkCompileErrors(unsigned int shader, const char* type);
+
+#endif

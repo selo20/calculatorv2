@@ -1,5 +1,17 @@
 {
     "files.associations": {
-        "stdio.h": "c"
-    }
+        "stdio.h": "c",
+        "glfw3.h": "c",
+        "iostream": "c",
+        "string": "cpp",
+        "glad.h": "c",
+        "shaders.h": "c",
+        "wallmapping,c": "cpp",
+        "array": "c",
+        "string_view": "c",
+        "span": "c",
+        "shader.h": "c",
+        "vector": "c"
+    },
+    "C_Cpp.errorSquiggles": "enabled"
 }
